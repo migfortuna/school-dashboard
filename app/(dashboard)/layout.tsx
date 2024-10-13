@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "../globals.css";
 import Menu from "../components/Menu";
+import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: "School Management Dashboard",
@@ -26,7 +27,10 @@ export default function DashboardLayout({
         </Link>
         <Menu />
       </div>
-      <div className="w-[85%] md:w-[90%] lg:w-[85%]">Fortuna</div>
+      <div className="w-[85%] md:w-[90%] lg:w-[85%]">
+        <Navbar />
+        {children}
+      </div>
     </section>
   );
 }
