@@ -1,9 +1,8 @@
 import React from "react";
 import BigCalendar from "@/app/components/dashboard/BigCalendar";
-import EventCalendar from "@/app/components/dashboard/Calendar";
 import Announcements from "@/app/components/dashboard/Announcements";
 
-const TeacherPage = () => {
+const ParentPage = () => {
   return (
     <section className="p-4 flex flex-col xl:flex-row gap-4">
       <div className="h-full w-full xl:w-2/3 p-4 rounded-md">
@@ -11,11 +10,10 @@ const TeacherPage = () => {
         <BigCalendar />
       </div>
       <div className="w-full xl:w-1/3 flex flex-col">
-        <EventCalendar />
         <Announcements />
       </div>
     </section>
   );
 };
 
-export default TeacherPage;
+export default ParentPage;
