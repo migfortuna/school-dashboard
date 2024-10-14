@@ -2,6 +2,7 @@ import React from "react";
 import UserCard from "@/app/components/dashboard/UserCard";
 import CountChart from "@/app/components/dashboard/CountChart";
 import AttendanceChart from "@/app/components/dashboard/AttendanceChart";
+import FinanceChart from "@/app/components/dashboard/FinanceChart";
 
 const users = ["students", "parents", "teachers", "staff"];
 
@@ -23,6 +24,7 @@ const AdminPage = () => {
         </div>
 
         {/* BOTTOM CHART */}
+        <FinanceChart />
       </div>
       <div className="w-full lg:w-1/3">right</div>
     </section>
