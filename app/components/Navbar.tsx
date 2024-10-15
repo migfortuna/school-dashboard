@@ -1,18 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   return (
     <section className="flex justify-end md:justify-between items-center p-5">
       {/* search bar */}
-      <div className="hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
-        <Image src="/search.png" alt="" width={14} height={14} />
-        <input
-          type="text"
-          placeholder="Search..."
-          className="w-[200px] p-2 bg-transparent outline-none"
-        />
-      </div>
+      <SearchBar flexClass="hidden md:flex" />
 
       {/* icons */}
       <div className="flex items-center gap-6">
