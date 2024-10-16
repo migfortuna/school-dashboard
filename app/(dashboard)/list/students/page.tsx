@@ -2,20 +2,20 @@ import React from "react";
 import Image from "next/image";
 import SearchBar from "@/app/components/SearchBar";
 import ListButtons from "@/app/components/ListButtons";
-import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
+import Pagination from "@/app/components/Pagination";
 import ListActions from "@/app/components/ListActions";
-import { teachersData } from "@/app/lib/data";
+import { studentsData } from "@/app/lib/data";
 
-type Teacher = {
+type Student = {
   id: number;
-  teacherId: string;
+  studentId: string;
   name: string;
   email?: string;
   photo: string;
-  phone: string;
-  subjects: string[];
-  classes: string[];
+  phone?: string;
+  grade: number;
+  class: string;
   address: string;
 };
 
@@ -25,18 +25,13 @@ const columns = [
     accessor: "info",
   },
   {
-    header: "Teacher ID",
-    accessor: "teacherId",
+    header: "Student ID",
+    accessor: "studentId",
     className: "hidden md:table-cell",
   },
   {
-    header: "Subjects",
-    accessor: "subjects",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Classes",
-    accessor: "classes",
+    header: "Grade",
+    accessor: "grade",
     className: "hidden md:table-cell",
   },
   {
@@ -55,32 +50,31 @@ const columns = [
   },
 ];
 
-const TeachersList = () => {
-  const renderRow = (teacher: Teacher) => {
+const StudentsList = () => {
+  const renderRow = (student: Student) => {
     return (
       <tr
-        key={teacher.id}
+        key={student.id}
         className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
       >
         <td className="flex gap-4 p-4">
           <Image
-            src={teacher.photo}
+            src={student.photo}
             alt=""
             width={40}
             height={40}
             className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
           />
           <div className="flex flex-col">
-            <h3 className="font-semibold">{teacher.name}</h3>
-            <p className="text-xs text-gray-500">{teacher.email}</p>
+            <h3 className="font-semibold">{student.name}</h3>
+            <p className="text-xs text-gray-500">{student.email}</p>
           </div>
         </td>
-        <td className="hidden md:table-cell">{teacher.teacherId}</td>
-        <td className="hidden md:table-cell">{teacher.subjects.join(", ")}</td>
-        <td className="hidden md:table-cell">{teacher.classes.join(", ")}</td>
-        <td className="hidden lg:table-cell">{teacher.phone}</td>
-        <td className="hidden lg:table-cell">{teacher.address}</td>
-        <ListActions linkTo={`/list/teachers/${teacher.id}`} />
+        <td className="hidden md:table-cell">{student.studentId}</td>
+        <td className="hidden md:table-cell">{student.grade}</td>
+        <td className="hidden lg:table-cell">{student.phone}</td>
+        <td className="hidden lg:table-cell">{student.address}</td>
+        <ListActions linkTo={`/list/students/${student.id}`} />
       </tr>
     );
   };
@@ -89,7 +83,7 @@ const TeachersList = () => {
     <section className="p-4 flex-1">
       {/* HEADER */}
       <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">All Teachers</h1>
+        <h1 className="hidden md:block text-lg font-semibold">All Students</h1>
         <div className="max-md:flex-1 md:flex gap-4">
           <SearchBar flexClass="flex" />
           <ListButtons />
@@ -97,7 +91,7 @@ const TeachersList = () => {
       </div>
 
       {/* TABLE */}
-      <Table columns={columns} renderRow={renderRow} data={teachersData} />
+      <Table columns={columns} renderRow={renderRow} data={studentsData} />
 
       {/* PAGINATION */}
       <Pagination />
@@ -105,4 +99,4 @@ const TeachersList = () => {
   );
 };
 
-export default TeachersList;
+export default StudentsList;
