@@ -120,7 +120,7 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="mt-7 text-sm">
+    <div className="mt-7 pb-5 text-sm">
       {menuItems.map((i) => (
         <div key={i.title} className="flex flex-col gap-2 mb-4">
           <p className="hidden lg:block text-gray-400 font-semibold underline my-2">

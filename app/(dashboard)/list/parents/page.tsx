@@ -1,10 +1,9 @@
 import React from "react";
-import SearchBar from "@/app/components/SearchBar";
-import ListButtons from "@/app/components/ListButtons";
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import ListActions from "@/app/components/ListActions";
 import { parentsData } from "@/app/lib/data";
+import TableHeading from "@/app/components/TableHeading";
 
 type Parent = {
   id: number;
@@ -61,19 +60,8 @@ const ParentsList = () => {
   };
   return (
     <section className="p-4 flex-1">
-      {/* HEADER */}
-      <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">All Parents</h1>
-        <div className="max-md:flex-1 md:flex gap-4">
-          <SearchBar flexClass="flex" />
-          <ListButtons />
-        </div>
-      </div>
-
-      {/* TABLE */}
+      <TableHeading headerText="All Parents" />
       <Table columns={columns} renderRow={renderRow} data={parentsData} />
-
-      {/* PAGINATION */}
       <Pagination />
     </section>
   );

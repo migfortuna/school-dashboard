@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import SearchBar from "@/app/components/SearchBar";
-import ListButtons from "@/app/components/ListButtons";
+import TableHeading from "@/app/components/TableHeading";
 import Pagination from "@/app/components/Pagination";
 import Table from "@/app/components/Table";
 import ListActions from "@/app/components/ListActions";
@@ -87,19 +86,8 @@ const TeachersList = () => {
 
   return (
     <section className="p-4 flex-1">
-      {/* HEADER */}
-      <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">All Teachers</h1>
-        <div className="max-md:flex-1 md:flex gap-4">
-          <SearchBar flexClass="flex" />
-          <ListButtons />
-        </div>
-      </div>
-
-      {/* TABLE */}
+      <TableHeading headerText="All Teachers" />
       <Table columns={columns} renderRow={renderRow} data={teachersData} />
-
-      {/* PAGINATION */}
       <Pagination />
     </section>
   );

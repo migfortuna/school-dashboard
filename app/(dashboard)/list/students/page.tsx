@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import SearchBar from "@/app/components/SearchBar";
-import ListButtons from "@/app/components/ListButtons";
 import Table from "@/app/components/Table";
 import Pagination from "@/app/components/Pagination";
 import ListActions from "@/app/components/ListActions";
 import { studentsData } from "@/app/lib/data";
+import TableHeading from "@/app/components/TableHeading";
 
 type Student = {
   id: number;
@@ -81,19 +80,8 @@ const StudentsList = () => {
 
   return (
     <section className="p-4 flex-1">
-      {/* HEADER */}
-      <div className="flex justify-between items-center">
-        <h1 className="hidden md:block text-lg font-semibold">All Students</h1>
-        <div className="max-md:flex-1 md:flex gap-4">
-          <SearchBar flexClass="flex" />
-          <ListButtons />
-        </div>
-      </div>
-
-      {/* TABLE */}
+      <TableHeading headerText="All Students" />
       <Table columns={columns} renderRow={renderRow} data={studentsData} />
-
-      {/* PAGINATION */}
       <Pagination />
     </section>
   );
