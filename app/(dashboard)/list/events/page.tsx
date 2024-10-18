@@ -55,12 +55,12 @@ const page = () => {
       <td className="hidden md:table-cell">{item.date}</td>
       <td className="hidden md:table-cell">{item.startTime}</td>
       <td className="hidden md:table-cell">{item.endTime}</td>
-      <ListActions linkTo={`/list/events/${item.id}`} />
+      <ListActions actionImg="edit" />
     </tr>
   );
   return (
     <section className="p-4 flex-1">
-      <TableHeading headerText="All Results" />
+      <TableHeading headerText="All Events" />
       <Table columns={columns} renderRow={renderRow} data={eventsData} />
       <Pagination />
     </section>

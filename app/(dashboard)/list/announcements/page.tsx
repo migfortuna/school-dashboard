@@ -41,12 +41,12 @@ const AnnouncementsList = () => {
       <td className="flex items-center gap-4 p-4">{item.title}</td>
       <td>{item.class}</td>
       <td className="hidden md:table-cell">{item.date}</td>
-      <ListActions linkTo={`/list/announcements/${item.id}`} />
+      <ListActions actionImg="edit" />
     </tr>
   );
   return (
     <section className="p-4 flex-1">
-      <TableHeading headerText="All Results" />
+      <TableHeading headerText="All Announcements" />
       <Table columns={columns} renderRow={renderRow} data={announcementsData} />
       <Pagination />
     </section>

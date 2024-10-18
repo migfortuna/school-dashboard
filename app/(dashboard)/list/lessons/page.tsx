@@ -42,7 +42,7 @@ const LessonsList = () => {
         <td className="font-semibold p-4">{lesson.subject}</td>
         <td>{lesson.class}</td>
         <td className="hidden md:table-cell">{lesson.teacher}</td>
-        <ListActions linkTo={`/list/lessons/${lesson.id}`} />
+        <ListActions actionImg="edit" />
       </tr>
     );
   };

@@ -54,7 +54,7 @@ const ParentsList = () => {
         <td className="hidden md:table-cell">{parent.students.join(", ")}</td>
         <td className="hidden lg:table-cell">{parent.phone}</td>
         <td className="hidden lg:table-cell">{parent.address}</td>
-        <ListActions linkTo={`/list/parents/${parent.id}`} />
+        <ListActions actionImg="edit" />
       </tr>
     );
   };

@@ -73,7 +73,7 @@ const StudentsList = () => {
         <td className="hidden md:table-cell">{student.grade}</td>
         <td className="hidden lg:table-cell">{student.phone}</td>
         <td className="hidden lg:table-cell">{student.address}</td>
-        <ListActions linkTo={`/list/students/${student.id}`} />
+        <ListActions linkTo={`/list/students/${student.id}`} actionImg="view" />
       </tr>
     );
   };

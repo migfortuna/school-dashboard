@@ -1,8 +1,9 @@
 import React from "react";
 import Table from "@/app/components/Table";
-import Pagination from "@/app/components/Pagination";
-import { examsData } from "@/app/lib/data";
 import TableHeading from "@/app/components/TableHeading";
+import Pagination from "@/app/components/Pagination";
+import ListActions from "@/app/components/ListActions";
+import { examsData } from "@/app/lib/data";
 
 type Exam = {
   id: number;
@@ -31,10 +32,10 @@ const columns = [
     accessor: "date",
     className: "hidden md:table-cell",
   },
-  //   {
-  //     header: "Actions",
-  //     accessor: "action",
-  //   },
+  {
+    header: "Actions",
+    accessor: "action",
+  },
 ];
 
 const ExamsList = () => {
@@ -47,6 +48,7 @@ const ExamsList = () => {
       <td>{exam.class}</td>
       <td className="hidden md:table-cell">{exam.teacher}</td>
       <td className="hidden md:table-cell">{exam.date}</td>
+      <ListActions actionImg="edit" />
       {/* <td>
            <div className="flex items-center gap-2">
              {role === "admin" ||

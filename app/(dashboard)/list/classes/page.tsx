@@ -50,7 +50,7 @@ const ClassesList = () => {
         <td className="hidden md:table-cell">{classType.capacity}</td>
         <td className="hidden md:table-cell">{classType.grade}</td>
         <td className="hidden md:table-cell">{classType.supervisor}</td>
-        <ListActions linkTo={`/list/classes/${classType.id}`} />
+        <ListActions actionImg="edit" />
       </tr>
     );
   };

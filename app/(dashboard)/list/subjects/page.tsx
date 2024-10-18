@@ -36,7 +36,7 @@ const SubjectsList = () => {
       >
         <td className="font-semibold p-4">{subject.name}</td>
         <td className="hidden md:table-cell">{subject.teachers.join(", ")}</td>
-        <ListActions linkTo={`/list/subjects/${subject.id}`} />
+        <ListActions actionImg="edit" />
       </tr>
     );
   };

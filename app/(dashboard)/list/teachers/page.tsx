@@ -79,7 +79,7 @@ const TeachersList = () => {
         <td className="hidden md:table-cell">{teacher.classes.join(", ")}</td>
         <td className="hidden lg:table-cell">{teacher.phone}</td>
         <td className="hidden lg:table-cell">{teacher.address}</td>
-        <ListActions linkTo={`/list/teachers/${teacher.id}`} />
+        <ListActions linkTo={`/list/teachers/${teacher.id}`} actionImg="view" />
       </tr>
     );
   };
